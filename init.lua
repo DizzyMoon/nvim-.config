@@ -21,7 +21,5 @@ require("irozage.remap")
 -- Setup plugins
 require("lazy").setup("irozage.plugins")
 
---Setup LSP
-require("irozage/lsp")
 -- Setup theme
 require("irozage.configs.colors")
