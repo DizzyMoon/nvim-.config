@@ -8,6 +8,8 @@ return {
 
         lspconfig.pyright.setup {}
 
+        lspconfig.ts_ls.setup {}
+
         vim.diagnostic.config({
             virtual_text = true,
             signs = true,

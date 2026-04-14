@@ -15,11 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Set 
 require("irozage.set")
--- Key remaps
-require("irozage.remap")
-
 -- Setup plugins
 require("lazy").setup("irozage.plugins")
+
+-- Key remaps
+require("irozage.remap")
 
 -- Setup theme
 require("irozage.configs.colors")

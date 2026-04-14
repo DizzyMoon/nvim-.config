@@ -2,7 +2,7 @@ return {
 	'nvim-telescope/telescope.nvim',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
-		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		{ 'nvim-telescope/telescope-fzf-native.nvim', "ahmedkhalf/project.nvim", build = 'make' },
 	},
 	lazy = false,  -- load immediately
 	config = function()
@@ -18,6 +18,7 @@ return {
 			},
 		}
 
+        require("telescope").load_extension("projects")
 		-- 2️⃣ Keymaps
 		local builtin = require('telescope.builtin')
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, { noremap = true, silent = true })
