@@ -2,14 +2,23 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-        local lspconfig = require("lspconfig")
+        -- Lua
+        vim.lsp.config('lua_ls', {})
 
-        lspconfig.lua_ls.setup {}
+        -- Python
+        vim.lsp.config('pyright', {})
 
-        lspconfig.pyright.setup {}
+        -- TypeScript / JavaScript
+        vim.lsp.config('ts_ls', {})
 
-        lspconfig.ts_ls.setup {}
+        -- Enable all configured servers
+        vim.lsp.enable({
+            'lua_ls',
+            'pyright',
+            'ts_ls',
+        })
 
+        -- Diagnostics config (unchanged)
         vim.diagnostic.config({
             virtual_text = true,
             signs = true,
