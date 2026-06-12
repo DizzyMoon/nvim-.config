@@ -34,9 +34,10 @@ vim.keymap.set("t", "<C-,>", [[<C-\><C-n>]])
 
 -- Make sure treesitter textobjects are installed and configured
 -- Then, set gD in normal mode to jump to the next class
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration) 
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, { desc = 'LSP references' })
 
 
 -- Rename variable
