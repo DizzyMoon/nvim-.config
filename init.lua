@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.rtp:prepend(lazypath)
 
 -- Set 

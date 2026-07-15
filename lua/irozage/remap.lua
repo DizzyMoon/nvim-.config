@@ -31,14 +31,14 @@ vim.keymap.set("n", "<leader>cc", '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude
 
 -- Force normal mode (Claude is an evil bitch who will steal my cursor)
 vim.keymap.set("t", "<C-,>", [[<C-\><C-n>]])
+vim.keymap.set("t", "<F12>", [[<C-\><C-n><cmd>ClaudeCode<CR>]], { desc = "Close Claude Code" })
 
 -- Make sure treesitter textobjects are installed and configured
 -- Then, set gD in normal mode to jump to the next class
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gi', function() require('telescope.builtin').lsp_implementations() end, { desc = 'LSP implementations' })
 vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, { desc = 'LSP references' })
-
 
 -- Rename variable
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)

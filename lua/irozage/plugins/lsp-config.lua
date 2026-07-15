@@ -11,11 +11,15 @@ return {
         -- TypeScript / JavaScript
         vim.lsp.config('ts_ls', {})
 
+        -- JSON
+        vim.lsp.config('jsonls', {})
+
         -- Enable all configured servers
         vim.lsp.enable({
             'lua_ls',
             'pyright',
             'ts_ls',
+            'jsonls',
         })
 
         -- Diagnostics config (unchanged)
