@@ -14,13 +14,18 @@ return {
         -- JSON
         vim.lsp.config('jsonls', {})
 
+        -- C++
+        vim.lsp.config('clangd', {})
+
         -- Enable all configured servers
         vim.lsp.enable({
             'lua_ls',
             'pyright',
             'ts_ls',
             'jsonls',
+            'clangd',
         })
+        
 
         -- Diagnostics config (unchanged)
         vim.diagnostic.config({
