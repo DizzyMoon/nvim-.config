@@ -1,7 +1,17 @@
 return {
     "neovim/nvim-lspconfig",
     lazy = false,
+    dependencies = {
+        "hrsh7th/cmp-nvim-lsp",
+    },
     config = function()
+        -- Advertise nvim-cmp's completion support to every language server.
+        -- Without this, servers such as clangd only see Neovim's basic
+        -- completion capabilities and may omit completion candidates.
+        vim.lsp.config('*', {
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        })
+
         -- Lua
         vim.lsp.config('lua_ls', {})
 
