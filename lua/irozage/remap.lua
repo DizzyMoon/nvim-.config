@@ -26,9 +26,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {
     desc = "Show full diagnostic"
 })
 
--- Toggle Claude Code
-vim.keymap.set("n", "<leader>cc", '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
-
 -- Force normal mode (Claude is an evil bitch who will steal my cursor)
 vim.keymap.set("t", "<C-,>", [[<C-\><C-n>]])
 vim.keymap.set("t", "<F12>", [[<C-\><C-n><cmd>ClaudeCode<CR>]], { desc = "Close Claude Code" })
